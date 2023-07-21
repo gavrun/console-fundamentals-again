@@ -1,6 +1,8 @@
 ﻿namespace console_fundamentals_again;
 class Program
 {
+    //main method control flow
+
     static void Main(string[] args)
     {
         Console.WriteLine("Hello, World!");
@@ -85,17 +87,48 @@ class Program
             break;
         }
 
-        //custom method
+        //while loops in custom methods
+        Console.WriteLine();
+        PrintNumbers();
         Console.WriteLine();
         PrintEvenNumbers();
-
-        //i'm here
         Console.WriteLine();
+        PrintEvenNumbersZero();
 
+        //for loops nesting
+        Console.WriteLine();
+        for (int j = 100; j < 102; j++) 
+        {
+            Console.WriteLine("Outer loop " + j);
 
+            for (int k = 1000; k < 1002; k++)
+            {
+                Console.WriteLine("Inner loop " + k);
+            }
+        }
+
+        // foreach elements of an array
+        string[] carMakes = {"Volvo", "BMW", "Ford", "Mazda"};
+        foreach (string make in carMakes) 
+        {
+            Console.WriteLine(make);
+        }
+        
     }
 
-        //custom method
+    //custom methods
+
+    static void PrintNumbers()
+    {
+        int i = 1;
+
+        while (i <= 5)
+        {
+            Console.WriteLine(i);
+            i++;
+        }
+    }
+
     static void PrintEvenNumbers()
     {
         int input = 10;
@@ -109,5 +142,21 @@ class Program
             }
             i++;
         }
-    }  
+    }   
+
+    static void PrintEvenNumbersZero()
+    {
+        int input = 10;
+        int i = 0;
+
+        do
+        {
+            if (i % 2 == 0)
+            {
+                Console.WriteLine(i);
+            }
+            i++;
+        } 
+        while (i <= input);
+    }
 }
