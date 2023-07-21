@@ -108,6 +108,7 @@ class Program
         }
 
         // foreach elements of an array
+        Console.WriteLine();
         string[] carMakes = {"Volvo", "BMW", "Ford", "Mazda"};
         foreach (string make in carMakes) 
         {
