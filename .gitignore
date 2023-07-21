@@ -11,3 +11,9 @@ bin/Debug/net7.0/console-fundamentals-again.deps.json
 bin/Debug/net7.0/console-fundamentals-again.dll
 bin/Debug/net7.0/console-fundamentals-again.pdb
 bin/Debug/net7.0/console-fundamentals-again.runtimeconfig.json
+obj/Debug/net7.0/.NETCoreApp,Version=v7.0.AssemblyAttributes.cs
+obj/Debug/net7.0/console-fundamentals-again.AssemblyInfo.cs
+obj/Debug/net7.0/console-fundamentals-again.AssemblyInfoInputs.cache
+obj/Debug/net7.0/console-fundamentals-again.csproj.AssemblyReference.cache
+obj/Debug/net7.0/console-fundamentals-again.GeneratedMSBuildEditorConfig.editorconfig
+obj/Debug/net7.0/console-fundamentals-again.GlobalUsings.g.cs
