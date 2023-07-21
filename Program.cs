@@ -6,6 +6,7 @@ class Program
         Console.WriteLine("Hello, World!");
 
         //string props and methods
+        Console.WriteLine();
         string myString = "Hello ";
         Console.WriteLine("/" + myString + "/");
         Console.WriteLine(myString[1]);  // Outputs "e"
@@ -14,6 +15,7 @@ class Program
         Console.WriteLine("/" + myString.TrimEnd(' ') + "/");
         
         //more string methods
+        Console.WriteLine();
         string nameTest = "John Doe";
         Console.WriteLine(nameTest);
         int charPos = nameTest.IndexOf("D");
@@ -21,6 +23,7 @@ class Program
         Console.WriteLine(lastName);
         
         //if condition
+        Console.WriteLine();
         int myAge = 25;
         int votingAge = 18;
         if (myAge >= votingAge) 
@@ -33,6 +36,7 @@ class Program
         }
 
         //if else condition
+        Console.WriteLine();
         DateTime time1 = DateTime.Now;
         if (time1.Hour > 20)
         {
@@ -48,11 +52,13 @@ class Program
         }
 
         //ternary condition
+        Console.WriteLine();
         DateTime time2 = DateTime.Now;
         string greeting2 = (time2.Hour < 11) ? "morning" : "hey";
         Console.WriteLine(greeting2);
 
         //switch cases
+        Console.WriteLine();
         int day = 4;
         switch (day) 
         {
@@ -80,9 +86,11 @@ class Program
         }
 
         //custom method
+        Console.WriteLine();
         PrintEvenNumbers();
 
         //i'm here
+        Console.WriteLine();
 
 
     }
