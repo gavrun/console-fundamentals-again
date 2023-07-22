@@ -17,3 +17,9 @@ obj/Debug/net7.0/console-fundamentals-again.AssemblyInfoInputs.cache
 obj/Debug/net7.0/console-fundamentals-again.csproj.AssemblyReference.cache
 obj/Debug/net7.0/console-fundamentals-again.GeneratedMSBuildEditorConfig.editorconfig
 obj/Debug/net7.0/console-fundamentals-again.GlobalUsings.g.cs
+obj/console-fundamentals-again.csproj.nuget.dgspec.json
+obj/console-fundamentals-again.csproj.nuget.g.props
+obj/console-fundamentals-again.csproj.nuget.g.targets
+obj/project.assets.json
+obj/project.nuget.cache
+obj/Debug/net7.0/console-fundamentals-again.assets.cache

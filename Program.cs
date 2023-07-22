@@ -114,6 +114,44 @@ class Program
         {
             Console.WriteLine(make);
         }
+
+        //breaking loops
+        Console.WriteLine();
+        for (int y = 0; y < 5; y++)
+        {
+            if (y == 4)
+            {
+                break;
+            }
+            Console.WriteLine("You will see " + y);
+        }
+        Console.WriteLine("You will not see 4");
+        Console.WriteLine();
+        for (int y = 0; y < 5; y++)
+        {
+            if (y == 3)
+            {
+                Console.WriteLine("You missed 3");
+                continue;
+            }
+            Console.WriteLine("You see " + y);
+        }
+
+        //arrays and loops
+        Console.WriteLine();
+        int[] array1 = { 1, 2, 3, 4};
+        Console.WriteLine("Array is " + array1.Length + " long");
+        for (int p = 0; p < array1.Length; p++)
+        {
+            Console.WriteLine(array1[p]);
+        }
+        Console.WriteLine("One more time");
+        foreach (int item1 in array1)
+        {
+            Console.WriteLine(item1);
+        }
+        
+        //
         
     }
 
