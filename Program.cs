@@ -1,4 +1,6 @@
-﻿namespace console_fundamentals_again;
+﻿using System.Xml.Schema;
+
+namespace console_fundamentals_again;
 class Program
 {
     //main method control flow
@@ -7,7 +9,7 @@ class Program
     {
         Console.WriteLine("Hello, World!");
 
-        //string props and methods
+        // string props and methods
         Console.WriteLine();
         string myString = "Hello ";
         Console.WriteLine("/" + myString + "/");
@@ -16,7 +18,7 @@ class Program
         Console.WriteLine(myString.Length);
         Console.WriteLine("/" + myString.TrimEnd(' ') + "/");
         
-        //more string methods
+        // more string methods
         Console.WriteLine();
         string nameTest = "John Doe";
         Console.WriteLine(nameTest);
@@ -24,7 +26,7 @@ class Program
         string lastName = nameTest.Substring(charPos);
         Console.WriteLine(lastName);
         
-        //if condition
+        // if condition
         Console.WriteLine();
         int myAge = 25;
         int votingAge = 18;
@@ -37,7 +39,7 @@ class Program
         Console.WriteLine("Not old enough to vote.");
         }
 
-        //if else condition
+        // if else condition
         Console.WriteLine();
         DateTime time1 = DateTime.Now;
         if (time1.Hour > 20)
@@ -53,13 +55,13 @@ class Program
             Console.WriteLine("Good day");
         }
 
-        //ternary condition
+        // ternary condition
         Console.WriteLine();
         DateTime time2 = DateTime.Now;
         string greeting2 = (time2.Hour < 11) ? "morning" : "hey";
         Console.WriteLine(greeting2);
 
-        //switch cases
+        // switch cases
         Console.WriteLine();
         int day = 4;
         switch (day) 
@@ -87,7 +89,11 @@ class Program
             break;
         }
 
-        //while loops in custom methods
+        // custom method
+        Console.WriteLine();
+        TestMethod();
+
+        // while loops in custom methods
         Console.WriteLine();
         PrintNumbers();
         Console.WriteLine();
@@ -95,7 +101,7 @@ class Program
         Console.WriteLine();
         PrintEvenNumbersZero();
 
-        //for loops nesting
+        // for loops nesting
         Console.WriteLine();
         for (int j = 100; j < 102; j++) 
         {
@@ -115,7 +121,7 @@ class Program
             Console.WriteLine(make);
         }
 
-        //breaking loops
+        // breaking loops
         Console.WriteLine();
         for (int y = 0; y < 5; y++)
         {
@@ -137,7 +143,7 @@ class Program
             Console.WriteLine("You see " + y);
         }
 
-        //arrays and loops
+        // arrays and loops
         Console.WriteLine();
         int[] array1 = { 1, 2, 3, 4};
         Console.WriteLine("Array is " + array1.Length + " long");
@@ -151,7 +157,7 @@ class Program
             Console.WriteLine(item1);
         }
         
-        //sorting arrays
+        // sorting arrays
         Console.WriteLine();
         string[] carMakes2 = {"Volvo", "BMW", "Ford", "Mazda", "TOYOTA", "Volkswagen", "Audi", "Mercedes-Benz"}; 
         string[] carMakes3 = new string[8];
@@ -159,15 +165,58 @@ class Program
         Array.Sort(carMakes3);
         foreach (var item2 in carMakes2)
         {
-            Console.WriteLine("Index of " + item2 + " is " + Array.IndexOf(carMakes3, item2) + " now and it was " + Array.IndexOf(carMakes2, item2)  + " before sorting");
+            Console.WriteLine("Index of " + item2 + " is " + 
+                Array.IndexOf(carMakes3, item2) + " now and it was " + 
+                Array.IndexOf(carMakes2, item2)  + " before sorting");
         }
 
-        //
+        // two-d arrays
+        Console.WriteLine();
+        int[,] numbers7 = { {1, 4, 2}, {3, 6, 8} };
+        Console.WriteLine(numbers7[0, 2]);
+        Console.WriteLine(numbers7[0, 0] + " before");
+        numbers7[0, 0] = 5;
+        Console.WriteLine(numbers7[0, 0] + " after");
+
+        // two-d arrays and loops
+        Console.WriteLine();
+        int[,] numbers8 = { {1, 4, 2}, {3, 6, 8} };
+        foreach (int k in numbers8)
+        {
+            Console.WriteLine(k);
+        }
         
+        Console.WriteLine();
+        int[,] numbers9 = { {1, 4, 2}, {3, 6, 8} };
+        for (int r = 0; r < numbers9.GetLength(0); r++) 
+        { 
+            for (int f = 0; f < numbers9.GetLength(1); f++) 
+                { 
+                    Console.WriteLine(numbers9[r, f]); 
+                } 
+        }  
+
+        // more custome methods
+        Console.WriteLine();
+        int xx = 1;
+        int yy = 2;
+        SumNumbers(xx, yy);
+
     }
 
     //custom methods
 
+    static void TestMethod()
+    {
+        Console.WriteLine("Executed test method");
+    }
+
+    static void SumNumbers(int arg1, int arg2)
+    {
+        int sum = arg1 + arg2;
+        Console.WriteLine("Sum of {0} and {1} is {2}", arg1, arg2, sum);
+    }
+    
     static void PrintNumbers()
     {
         int i = 1;
