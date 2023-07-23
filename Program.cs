@@ -151,6 +151,17 @@ class Program
             Console.WriteLine(item1);
         }
         
+        //sorting arrays
+        Console.WriteLine();
+        string[] carMakes2 = {"Volvo", "BMW", "Ford", "Mazda", "TOYOTA", "Volkswagen", "Audi", "Mercedes-Benz"}; 
+        string[] carMakes3 = new string[8];
+        Array.Copy(carMakes2, carMakes3, carMakes2.Length);
+        Array.Sort(carMakes3);
+        foreach (var item2 in carMakes2)
+        {
+            Console.WriteLine("Index of " + item2 + " is " + Array.IndexOf(carMakes3, item2) + " now and it was " + Array.IndexOf(carMakes2, item2)  + " before sorting");
+        }
+
         //
         
     }
