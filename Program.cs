@@ -1,4 +1,5 @@
 ﻿using System.Xml.Schema;
+using System.IO;
 
 namespace console_fundamentals_again;
 class Program
@@ -238,9 +239,52 @@ class Program
         AnotherInheritedClass anotherInheritedObject = new AnotherInheritedClass();
         anotherInheritedObject.MyAnotherInheritedMethod();
         anotherInheritedObject.MyMethod();
+
+        // objects from abstraction
+        Console.WriteLine();
+        //MyAbstractClass myAbstractObject = new MyAbstractClass(); fails to build
+        //myAbstractObject.ShowStatus() cannot be called
+        FromAbastractClass myFromAbastractObject = new FromAbastractClass();
+        myFromAbastractObject.ShowStatus();
+        myFromAbastractObject.DoThing();
+
+        // objects from interfaces
+        Console.WriteLine();
+        FromInterfaceClass fromInterfaceObject = new FromInterfaceClass();
+        fromInterfaceObject.DoSomehing();
+
+        // calling enums
+        Console.WriteLine();
+        MyEnum myEnumObject = MyEnum.Five;
+        Console.WriteLine("Five is " + myEnumObject);
+        int myEnumObject2 = (int) MyEnum.Three;
+        Console.WriteLine("Three is " + myEnumObject2);
+
+        // switching by enums
+        Console.WriteLine();
+        MyLevel myVar = MyLevel.Medium;
+        switch(myVar) 
+        {
+            case MyLevel.Low:
+            Console.WriteLine("Low level");
+            break;
+            case MyLevel.Medium:
+            Console.WriteLine("Medium level");
+            break;
+            case MyLevel.High:
+            Console.WriteLine("High level");
+            break;
+        }
+
+        // working with files
+        Console.WriteLine();
+        string writeText = "This is something to be writted to a file";
+        File.WriteAllText("samplefile.txt", writeText);
+        string readText = File.ReadAllText("samplefile.txt");
+        Console.WriteLine(readText); 
     }
 
-    //custom methods
+    //custom methodse
 
     static void TestMethod()
     {
@@ -370,4 +414,55 @@ class AnotherInheritedClass : MyClass
     {
         Console.WriteLine("My another \"overidden\" action");
     }
+}
+
+abstract class MyAbstractClass
+{
+    public string status = "instantiated";
+
+    public void ShowStatus()
+    {
+        Console.WriteLine(status);
+    }
+    public abstract void DoThing();
+}
+
+class FromAbastractClass : MyAbstractClass
+{
+    public override void DoThing()
+    {
+        Console.WriteLine("Doing my abastract thing");
+    }
+}
+
+// custom interfaces
+interface IInterface 
+{
+    void DoSomehing();
+}
+
+class FromInterfaceClass : IInterface
+{
+    public void DoSomehing()
+    {
+        Console.WriteLine("Doing my interface action");
+    }
+}
+
+// enumeration
+
+enum MyEnum
+{
+    One,
+    Two,
+    Three,
+    Four,
+    Five
+}
+
+enum MyLevel 
+{
+  Low,
+  Medium,
+  High
 }
