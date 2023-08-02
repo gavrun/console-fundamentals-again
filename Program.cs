@@ -278,7 +278,7 @@ class Program
 
         // working with files
         Console.WriteLine();
-        string writeText = "This is something to be writted to a file";
+        string writeText = "This is something to be writted to a file\n";
         File.WriteAllText("samplefile.txt", writeText);
         string readText = File.ReadAllText("samplefile.txt");
         Console.WriteLine(readText); 
