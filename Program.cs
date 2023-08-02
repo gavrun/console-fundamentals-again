@@ -282,6 +282,8 @@ class Program
         File.WriteAllText("samplefile.txt", writeText);
         string readText = File.ReadAllText("samplefile.txt");
         Console.WriteLine(readText); 
+        string readTextFromFile = File.ReadAllText("manualfile.txt");
+        Console.WriteLine(readTextFromFile);
     }
 
     //custom methodse
