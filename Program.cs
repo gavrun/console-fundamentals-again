@@ -276,7 +276,7 @@ class Program
             break;
         }
 
-        // working with files
+        // working with specific class (files)
         Console.WriteLine();
         string writeText = "This is something to be writted to a file\n";
         File.WriteAllText("samplefile.txt", writeText);
@@ -284,9 +284,35 @@ class Program
         Console.WriteLine(readText); 
         string readTextFromFile = File.ReadAllText("manualfile.txt");
         Console.WriteLine(readTextFromFile);
+
+        // exceptions and throwing exceptions
+        Console.WriteLine();
+        int[] myNumbersArray = {1, 2, 3};
+        try
+        {
+            Console.WriteLine(myNumbersArray[10]);
+        }
+        catch (System.Exception)
+        {
+            Console.WriteLine("ERROR: Exceeded the array lenght");
+            //throw;
+        }
+        try
+        {
+            Console.WriteLine(myNumbersArray[10]);
+        }
+        catch (System.Exception error)
+        {
+            Console.WriteLine("ERROR: " + error.Message);
+            //throw;
+        }
+        finally
+        {
+            Console.WriteLine("Anyway..");
+        }
     }
 
-    //custom methodse
+    //custom methods
 
     static void TestMethod()
     {
