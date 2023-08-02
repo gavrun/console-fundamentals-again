@@ -202,6 +202,42 @@ class Program
         int yy = 2;
         SumNumbers(xx, yy);
 
+        Console.WriteLine();
+        ReturnString();
+        ReturnString("TEST");
+
+        Console.WriteLine();
+        Console.WriteLine(ReturnSumNumbers(1,2));
+
+        Console.WriteLine();
+        ReturnKids(child1: "Liam", child2: "Liam", child3: "John");
+
+        // custom classes and methods
+        Console.WriteLine();
+        MyClass myObject = new MyClass();
+        Console.WriteLine(myObject.state);
+
+        // custom classes and encapsulation and automatic props
+        Console.WriteLine();
+        AnotherClass anotherObject = new AnotherClass();
+        anotherObject.SecretString = "###";
+        Console.WriteLine(anotherObject.SecretString);
+        Console.WriteLine();
+        anotherObject.SecretString2 = "???";
+        Console.WriteLine(anotherObject.SecretString + " " + anotherObject.SecretString2);
+
+        // base class derived class
+        Console.WriteLine();
+        InheritedClass inheritedObject = new InheritedClass();
+        inheritedObject.color = "red";
+        inheritedObject.MyMethod();
+        Console.WriteLine(inheritedObject.state + " " + inheritedObject.color);
+
+        // overrive base class method
+        Console.WriteLine();
+        AnotherInheritedClass anotherInheritedObject = new AnotherInheritedClass();
+        anotherInheritedObject.MyAnotherInheritedMethod();
+        anotherInheritedObject.MyMethod();
     }
 
     //custom methods
@@ -215,6 +251,20 @@ class Program
     {
         int sum = arg1 + arg2;
         Console.WriteLine("Sum of {0} and {1} is {2}", arg1, arg2, sum);
+    }
+
+    static int ReturnSumNumbers(int arg1, int arg2)
+    {
+        return arg1 + arg2;
+    }
+    static double ReturnSumNumbers(double arg1, double arg2)
+    {
+        return arg1 + arg2;
+    }
+
+    static void ReturnString(string str = "NOTHING")
+    {
+        Console.WriteLine("Here is what you provided {0}", str);
     }
     
     static void PrintNumbers()
@@ -257,5 +307,67 @@ class Program
             i++;
         } 
         while (i <= input);
+    }
+
+    static void ReturnKids(string child1, string child2, string child3) 
+    {
+        Console.WriteLine("The youngest child is: " + child3);
+    }
+}
+
+// custom classes
+
+class MyClass
+{
+    public string state = "idle";
+    public int time = 0;
+    public string? name;
+    public string? type;
+    public virtual void MyMethod()
+    {
+        Console.WriteLine("My base action");
+    }
+}  
+
+sealed class AnotherClass
+{
+    private string? secret;
+    public string SecretString
+    {
+        get { return secret; }
+        set { secret = value; }
+    }
+
+    public string? SecretString2
+    { get; set; }
+
+    public void AnotherMethod()
+    {
+        Console.WriteLine(secret);
+    }
+}
+
+class InheritedClass : MyClass
+{
+    public string? color;
+
+    public void MyInheritedMethod()
+    {
+        Console.WriteLine("My \"inherited\" action");
+    }
+}
+
+class AnotherInheritedClass : MyClass
+{
+    public string? color;
+
+    public void MyAnotherInheritedMethod()
+    {
+        Console.WriteLine("My another \"inherited\" action");
+    }
+
+    public override void MyMethod()
+    {
+        Console.WriteLine("My another \"overidden\" action");
     }
 }
